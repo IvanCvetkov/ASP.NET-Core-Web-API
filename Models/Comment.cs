@@ -9,9 +9,10 @@ public class Comment
     public string Title { get; set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
     public DateTime CreatedOn { get; set; } = DateTime.UnixEpoch;
-    
     [ForeignKey(nameof(Stock))]
     public int? StockId { get; set; }
     public virtual Stock Stock { get; set; }
-    public List<Portfolio> Portfolios { get; set; } = new();
+
+    public string AppUserId { get; set; }
+    public AppUser AppUser { get; set; }
 }
